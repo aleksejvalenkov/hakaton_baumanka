@@ -30,6 +30,7 @@ def SERVER():
                 conn.send(file_data)
                 if not file_data:
                     break
+            conn.send("@".encode('utf8'))
             print("file sended")
 
         elif data == 'close':
