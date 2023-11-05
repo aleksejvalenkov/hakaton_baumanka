@@ -35,6 +35,7 @@ def SERVER():
         elif data == 'close':
             conn.close()
             print("connection close")
+            break
     
 
     
