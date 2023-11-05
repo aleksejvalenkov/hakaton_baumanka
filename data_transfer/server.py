@@ -22,7 +22,7 @@ def SERVER():
         if not data:
             break
         print(data)
-        if data == 'get_im':
+        if data == 'getim':
             file = open(filename, "rb")
             # while for sending
             while True:
