@@ -36,8 +36,8 @@ def image_reader():
     
     time_now = time.time()
 
-    while time.time() - time_now >= 1:
-
+    while time.time() - time_now <= 1:
+        print("cast")
         im = picam2.capture_array()
 
         grey = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
