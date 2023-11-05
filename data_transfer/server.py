@@ -16,7 +16,7 @@ def SERVER():
     print("waiting...")
     conn, addr = s.accept()
     print(addr, "connected")
-    filename = "dog2"
+    filename = "image.jpeg"
     file = open(filename, "rb")
     # while for sending
     while True:
@@ -33,14 +33,19 @@ def image_reader():
     picam2 = Picamera2()
     picam2.configure(picam2.create_preview_configuration(main={"format": 'XRGB8888', "size": (640, 480)}))
     picam2.start()
+    
+    time_now = time.time()
 
-    while True:
+    while time.time() - time_now > 1:
+
         im = picam2.capture_array()
 
         grey = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
 
         cv2.imshow("Camera", im)
         cv2.waitKey(1)
+        time_now = time.time()
+        cv2.imwrite("image.jpeg", im)
 
 # init events
 e1 = threading.Event()
