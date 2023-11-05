@@ -36,14 +36,14 @@ def image_reader():
     
     time_now = time.time()
 
-    while time.time() - time_now > 1:
+    while time.time() - time_now >= 1:
 
         im = picam2.capture_array()
 
         grey = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
 
-        cv2.imshow("Camera", im)
-        cv2.waitKey(1)
+        # cv2.imshow("Camera", im)
+        # cv2.waitKey(1)
         time_now = time.time()
         cv2.imwrite("image.jpeg", im)
 
