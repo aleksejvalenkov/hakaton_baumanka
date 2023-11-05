@@ -3,7 +3,7 @@ sock = socket.socket()
 host = "172.16.98.182"
 port = 8080
 sock.bind((host, port))
-sock.listen(1)
+sock.listen(2)
 print(host)
 print("waiting...")
 conn, addr = sock.accept()
