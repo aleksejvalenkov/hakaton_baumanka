@@ -47,8 +47,8 @@ e1 = threading.Event()
 e2 = threading.Event()
 
 # init threads
-t1 = threading.Thread(target=SERVER, args=(0, e1, e2))
-t2 = threading.Thread(target=image_reader, args=(1, e2, e1))
+t1 = threading.Thread(target=SERVER, args=())
+t2 = threading.Thread(target=image_reader, args=())
 
 # start threads
 t1.start()
