@@ -9,11 +9,11 @@ print("waiting...")
 conn, addr = sock.accept()
 print(addr, "connected")
 filename = "dog2.jpeg"
-# file = open(filename, "wb")
+file = open(filename, "wb")
 while True:
     file_data = conn.recv(4096)
-    print(file_data)
-    # file.write(file_data)
+    # print(file_data)
+    file.write(file_data)
     if not file_data:
         break
 conn.close()

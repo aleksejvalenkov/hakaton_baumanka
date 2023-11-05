@@ -5,7 +5,7 @@ port = 8080
 sock.connect((host, port))
 print("connected")
 
-sock.send('hello, Raspberry!')
+# sock.send('hello, Raspberry!')
 
 filename = "dog"
 file = open(filename, "rb")
