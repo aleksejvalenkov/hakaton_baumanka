@@ -33,10 +33,10 @@ def image_reader():
     picam2 = Picamera2()
     picam2.configure(picam2.create_preview_configuration(main={"format": 'XRGB8888', "size": (640, 480)}))
     picam2.start()
-    
-    time_now = time.time()
 
-    while time.time() - time_now <= 1:
+    sleep = 1
+
+    while True:
         print("cast")
         im = picam2.capture_array()
 
@@ -46,6 +46,7 @@ def image_reader():
         # cv2.waitKey(1)
         time_now = time.time()
         cv2.imwrite("image.jpeg", im)
+        time.sleep(sleep)
 
 # init events
 e1 = threading.Event()
