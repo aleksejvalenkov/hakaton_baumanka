@@ -12,7 +12,9 @@ def make_req(sock):
 
 
 
-make_req(s)
+# make_req(s)
+s.send("get_im".encode('utf8'))
+
 file = open(filename, "wb")
 while True:
     file_data = s.recv(4096)

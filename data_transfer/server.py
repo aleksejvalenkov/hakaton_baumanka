@@ -17,10 +17,10 @@ def SERVER():
     conn, addr = s.accept()
     print(addr, "connected")
     filename = "image.jpeg"
-    while True:
-        data = conn.recv(1024).decode("utf8")
-        if not data:
-            break
+
+    data = conn.recv(1024).decode("utf8")
+    # if not data:
+
     print(data)
 
     file = open(filename, "rb")
