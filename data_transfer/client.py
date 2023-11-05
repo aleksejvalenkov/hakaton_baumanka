@@ -4,7 +4,7 @@ host = "172.16.98.38"
 port = 8080
 s.connect((host, port))
 print("connected")
-filename = "dog.jpeg"
+filename = "dog2.jpeg"
 file = open(filename, "wb")
 while True:
     file_data = s.recv(4096)
