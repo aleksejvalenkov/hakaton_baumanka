@@ -1,6 +1,6 @@
 import socket
 s = socket.socket()
-host = socket.gethostname()
+host = "172.16.98.38"
 port = 8080
 s.bind((host, port))
 s.listen(1)
