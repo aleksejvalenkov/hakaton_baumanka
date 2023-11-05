@@ -1,6 +1,6 @@
 import socket
 sock = socket.socket()
-host = "172.16.98.182"
+host = "172.16.98.18"
 port = 8080
 sock.connect((host, port))
 print("connected")

@@ -1,6 +1,6 @@
 import socket
 sock = socket.socket()
-host = "localhost"
+host = "172.16.98.182"
 port = 8080
 sock.bind((host, port))
 sock.listen(1)
