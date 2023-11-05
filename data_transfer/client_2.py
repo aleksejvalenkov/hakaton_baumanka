@@ -4,7 +4,7 @@ host = "172.16.98.182"
 port = 8080
 s.connect((host, port))
 print("connected")
-filename = "dog"
+filename = "dog2"
 file = open(filename, "rb")
 while True:
     file_data = file.read(4096)
