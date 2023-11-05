@@ -18,7 +18,7 @@ def SERVER():
     print(addr, "connected")
     filename = "image.jpeg"
     while True:
-        data = conn.recv(4096).decode("utf8")
+        data = conn.recv(1024).decode("utf8")
         if not data:
             break
         print(data)
@@ -26,11 +26,12 @@ def SERVER():
             file = open(filename, "rb")
             # while for sending
             while True:
-                file_data = file.read(4096)
+                file_data = file.read(70000)
                 conn.send(file_data)
                 if not file_data:
                     break
             print("file sended")
+
         elif data == 'close':
             conn.close()
             print("connection close")
