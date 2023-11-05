@@ -19,9 +19,8 @@ make_req("getim")
 file = open(filename, "wb")
 while True:
     file_data = s.recv(4096)
-    print(file_data)
     file.write(file_data)
-    if not file_data or file_data == b'' or file_data[-1] == '@':
+    if file_data[-1] == 64:
         break
 file.close()
 print("file downloaded")
