@@ -17,6 +17,12 @@ def SERVER():
     conn, addr = s.accept()
     print(addr, "connected")
     filename = "image.jpeg"
+    while True:
+        data = conn.recv(1024).decode("utf8")
+        if not data:
+            break
+    print(data)
+
     file = open(filename, "rb")
     # while for sending
     while True:
@@ -24,7 +30,7 @@ def SERVER():
         conn.send(file_data)
         if not file_data:
             break
-    conn.close()
+    # conn.close()
     print("file sended")
 
 def image_reader():
