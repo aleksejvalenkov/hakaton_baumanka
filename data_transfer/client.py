@@ -13,15 +13,15 @@ s.connect((host, port))
 print("connected")
 filename = "dog2.jpeg"
 
-make_req("get_im")
+make_req("getim")
 # s.send("get_im".encode('utf8'))
 
 file = open(filename, "wb")
-# while True:
-file_data = s.recv(70000)
-file.write(file_data)
-    # if not file_data:
-    #     break
+while True:
+    file_data = s.recv(4096)
+    file.write(file_data)
+    if not file_data:
+        break
 file.close()
 print("file downloaded")
 
