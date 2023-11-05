@@ -9,11 +9,15 @@ print("connected")
 
 filename = "dog"
 file = open(filename, "rb")
-
-file_data = file.read(4096)
-sock.send(file_data)
-if not file_data:
-    print("file is empty")
+counter = 0
+while True:
+    file_data = file.read(4096)
+    sock.send(file_data)
+    print(counter)
+    counter += 1
+    if not file_data:
+        print("file is empty")
+        break
 
 file.close()
 print("file sended")
