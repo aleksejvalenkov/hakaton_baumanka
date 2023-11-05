@@ -8,7 +8,7 @@ print(host)
 print("waiting...")
 conn, addr = s.accept()
 print(addr, "connected")
-filename = "dog.jpeg"
+filename = "dog"
 file = open(filename, "rb")
 while True:
     file_data = file.read(4096)
