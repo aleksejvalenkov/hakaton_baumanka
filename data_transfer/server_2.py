@@ -1,18 +1,19 @@
 import socket
-s = socket.socket()
+sock = socket.socket()
 host = "172.16.98.182"
 port = 8080
-s.bind((host, port))
-s.listen(1)
+sock.bind((host, port))
+sock.listen(1)
 print(host)
 print("waiting...")
-conn, addr = s.accept()
+conn, addr = sock.accept()
 print(addr, "connected")
 filename = "dog2.jpeg"
-file = open(filename, "wb")
+# file = open(filename, "wb")
 while True:
     file_data = conn.recv(4096)
-    file.write(file_data)
+    print(file_data)
+    # file.write(file_data)
     if not file_data:
         break
 conn.close()
