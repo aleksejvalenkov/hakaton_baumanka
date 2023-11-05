@@ -17,21 +17,26 @@ def SERVER():
     conn, addr = s.accept()
     print(addr, "connected")
     filename = "image.jpeg"
-
-    data = conn.recv(1024).decode("utf8")
-    # if not data:
-
-    print(data)
-
-    file = open(filename, "rb")
-    # while for sending
     while True:
-        file_data = file.read(4096)
-        conn.send(file_data)
-        if not file_data:
+        data = conn.recv(4096).decode("utf8")
+        if not data:
             break
-    # conn.close()
-    print("file sended")
+        print(data)
+        if data == 'get_im':
+            file = open(filename, "rb")
+            # while for sending
+            while True:
+                file_data = file.read(4096)
+                conn.send(file_data)
+                if not file_data:
+                    break
+            print("file sended")
+        elif data == 'close':
+            conn.close()
+            print("connection close")
+    
+
+    
 
 def image_reader():
     # Grab images as numpy arrays and leave everything else to OpenCV.

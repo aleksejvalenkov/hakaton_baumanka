@@ -7,13 +7,14 @@ s.connect((host, port))
 print("connected")
 filename = "dog2.jpeg"
 
-def make_req(sock):
-    sock.send("get_im".encode('utf8'))
+def make_req(com):
+    global s
+    s.send(com.encode('utf8'))
 
 
 
-# make_req(s)
-s.send("get_im".encode('utf8'))
+make_req("get_im")
+# s.send("get_im".encode('utf8'))
 
 file = open(filename, "wb")
 while True:
@@ -22,6 +23,7 @@ while True:
     if not file_data:
         break
 
+make_req("close")
 file.close()
 print("file downloaded")
 
