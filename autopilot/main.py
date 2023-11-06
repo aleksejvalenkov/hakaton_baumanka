@@ -20,7 +20,7 @@ def mavlink_connect(connection_str: str, baud: int):
     return connection
 
 
-connect = mavlink_connect("/dev/ttyACM0", 115200)  # Подключение
+connect = mavlink_connect("/dev/ttyACM0", 57600)  # Подключение
 
 # test_all.arm(connect, 1)
 arm(connect, 1)
