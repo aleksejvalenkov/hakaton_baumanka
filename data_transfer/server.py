@@ -43,24 +43,24 @@ def SERVER():
 
 def image_reader():
     # Grab images as numpy arrays and leave everything else to OpenCV.
+    pass
+    # picam2 = Picamera2()
+    # picam2.configure(picam2.create_preview_configuration(main={"format": 'XRGB8888', "size": (640, 480)}))
+    # picam2.start()
 
-    picam2 = Picamera2()
-    picam2.configure(picam2.create_preview_configuration(main={"format": 'XRGB8888', "size": (640, 480)}))
-    picam2.start()
+    # sleep = 0.1
 
-    sleep = 0.1
+    # while True:
+    #     print("cast")
+    #     im = picam2.capture_array()
 
-    while True:
-        print("cast")
-        im = picam2.capture_array()
+    #     grey = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
 
-        grey = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
-
-        # cv2.imshow("Camera", im)
-        # cv2.waitKey(1)
-        time_now = time.time()
-        cv2.imwrite("image.jpeg", im)
-        time.sleep(sleep)
+    #     # cv2.imshow("Camera", im)
+    #     # cv2.waitKey(1)
+    #     time_now = time.time()
+    #     cv2.imwrite("image.jpeg", im)
+    #     time.sleep(sleep)
 
 # init events
 e1 = threading.Event()
