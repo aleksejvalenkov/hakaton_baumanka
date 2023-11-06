@@ -8,7 +8,8 @@ from picamera2 import Picamera2
 
 def SERVER():
     s = socket.socket()
-    host = "172.16.98.38"
+    # host = "172.16.98.38"
+    host = "192.168.1.84"
     port = 8080
     s.bind((host, port))
     s.listen(1)

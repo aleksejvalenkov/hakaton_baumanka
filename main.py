@@ -8,7 +8,7 @@ def main():
     client = Client()
     while True:
         client.read_sock("image.jpeg")
-        if counter == 10:
+        if counter == 100:
             break
         counter += 1
         time.sleep(0.1)
