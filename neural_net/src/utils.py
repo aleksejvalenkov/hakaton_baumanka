@@ -41,3 +41,14 @@ def draw_keypoints(outputs, image):
         else:
             continue
     return image
+
+def check_people(outputs):
+
+        # the `outputs` is list which in-turn contains the dictionaries 
+    for i in range(len(outputs[0]['keypoints'])):
+        keypoints = outputs[0]['keypoints'][i].cpu().detach().numpy()
+        # proceed to draw the lines if the confidence score is above 0.9
+        if outputs[0]['scores'][i] > 0.9:
+            return True
+        
+    return False
