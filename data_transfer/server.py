@@ -30,6 +30,7 @@ def SERVER():
         data = conn.recv(40).decode("utf8")
         if not data:
             break
+        print("__________________________________________________")
         print(data)
         if data == 'getim':
             file = open(filename, "rb")

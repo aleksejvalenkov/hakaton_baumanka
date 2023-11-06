@@ -11,7 +11,7 @@ def main():
     net = Net()
     while True:
         client.read_sock("image.jpeg")
-        if counter == 100:
+        if counter == 10:
             break
         counter += 1
         # Place to NET
