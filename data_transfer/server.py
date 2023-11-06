@@ -36,7 +36,7 @@ def SERVER():
         if not data:
             break
         print("__________________________________________________")
-        print(data)
+        print(f"Reseivde : \t {data}")
 
         if data == 'getim':
             file = open(filename, "rb")
@@ -50,11 +50,12 @@ def SERVER():
             print("file sended")
 
         elif data == 'PTrue':
+            print("")
             People = True
             print(f'People on image: {People}')
 
         elif data == 'PFals':
-            print("Hia")
+            print("")
             People = False
             print(f'People on image: {People}')
             
