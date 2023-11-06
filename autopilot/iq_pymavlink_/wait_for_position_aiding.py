@@ -6,7 +6,7 @@ from pymavlink import mavutil
 # add this folder to the path
 utilities_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(utilities_path)
-from get_autopilot_info import get_autopilot_info
+from iq_pymavlink_.get_autopilot_info import get_autopilot_info
 
 
 def get_enum_value_by_name(enum_dict, name):

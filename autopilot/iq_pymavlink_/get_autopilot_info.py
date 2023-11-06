@@ -5,10 +5,10 @@ import os
 import sys
 utilities_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(utilities_path)
-from connect_to_sysid import connect_to_sysid
+from iq_pymavlink_.connect_to_sysid import connect_to_sysid
 
 from pymavlink import mavutil
-from connect_to_sysid import connect_to_sysid
+from iq_pymavlink_.connect_to_sysid import connect_to_sysid
 
 
 def get_autopilot_info(connection, sysid=1):

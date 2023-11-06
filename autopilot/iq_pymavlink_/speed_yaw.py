@@ -1,7 +1,7 @@
 import argparse
 from math import radians
 from pymavlink import mavutil
-from get_autopilot_info import get_autopilot_info
+from iq_pymavlink_.get_autopilot_info import get_autopilot_info
 
 def mavlink_connect(connection_str: str):
     """Connects to a MAVLink client.
