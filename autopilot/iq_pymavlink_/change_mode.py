@@ -1,5 +1,5 @@
 from pymavlink import mavutil
-from autopilot.iq_pymavlink.connect_to_sysid import connect_to_sysid
+from autopilot.iq_pymavlink_.connect_to_sysid import connect_to_sysid
 import argparse
 
 main_mode_mapping_px4 = {

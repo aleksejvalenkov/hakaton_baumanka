@@ -3,8 +3,8 @@ import json
 from typing import Dict, Optional
 
 from pymavlink import mavutil
-from autopilot.iq_pymavlink.connect_to_sysid import connect_to_sysid
-from autopilot.iq_pymavlink.get_autopilot_info import get_autopilot_info
+from autopilot.iq_pymavlink_.connect_to_sysid import connect_to_sysid
+from autopilot.iq_pymavlink_.get_autopilot_info import get_autopilot_info
 
 
 def upload_qgc_mission(mission_file: str, the_connection: mavutil.mavlink_connection, sysid: int = 1) -> Optional[bool]:

@@ -1,9 +1,9 @@
 # takeoff.py
 import argparse
 from pymavlink import mavutil
-from autopilot.iq_pymavlink.connect_to_sysid import connect_to_sysid
-from autopilot.iq_pymavlink.wait_for_position_aiding import wait_until_position_aiding
-from autopilot.iq_pymavlink.get_autopilot_info import get_autopilot_info
+from autopilot.iq_pymavlink_.connect_to_sysid import connect_to_sysid
+from autopilot.iq_pymavlink_.wait_for_position_aiding import wait_until_position_aiding
+from autopilot.iq_pymavlink_.get_autopilot_info import get_autopilot_info
 
 
 def takeoff(mav_connection, takeoff_altitude: float, tgt_sys_id: int = 1, tgt_comp_id=1):
