@@ -32,6 +32,7 @@ def SERVER():
             break
         print("__________________________________________________")
         print(data)
+        print(type(data))
         if data == 'getim':
             file = open(filename, "rb")
             # while for sending
