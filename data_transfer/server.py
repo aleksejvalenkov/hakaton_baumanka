@@ -45,11 +45,11 @@ def SERVER():
 
         elif data == 'PTrue':
             People = True
-            print(f"People on image: {People}")
+            print(f'People on image: {People}')
 
         elif data == 'RFals':
             People = False
-            print(f"People on image: {People}")
+            print(f'People on image: {People}')
 
         elif data == 'close':
             conn.close()
