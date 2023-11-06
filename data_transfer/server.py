@@ -6,6 +6,14 @@ import time
 import cv2
 from picamera2 import Picamera2
 
+# global variables
+Magnet = False
+Led = False
+Voice = 0
+People = False
+
+
+
 def SERVER():
     s = socket.socket()
     # host = "172.16.98.38"
@@ -34,12 +42,20 @@ def SERVER():
             conn.send("@".encode('utf8'))
             print("file sended")
 
+        elif data == 'PTrue':
+            People = True
+            print(f"People on image: {People}")
+
+        elif data == 'RFals':
+            People = False
+            print(f"People on image: {People}")
+
         elif data == 'close':
             conn.close()
             print("connection close")
             break
     
-
+        
     
 
 def image_reader():
@@ -63,20 +79,27 @@ def image_reader():
     #     cv2.imwrite("image.jpeg", im)
     #     time.sleep(sleep)
 
+def serial_prot():
+    pass
+
 # init events
 e1 = threading.Event()
 e2 = threading.Event()
+e3 = threading.Event()
 
 # init threads
 t1 = threading.Thread(target=SERVER, args=())
 t2 = threading.Thread(target=image_reader, args=())
+t3 = threading.Thread(target=serial_prot, args=())
 
 # start threads
 t1.start()
 t2.start()
+t3.start()
 
 e1.set() # initiate the first event
 
 # join threads to the main thread
 t1.join()
 t2.join()
+t3.join()

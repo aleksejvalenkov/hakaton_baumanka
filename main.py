@@ -17,6 +17,10 @@ def main():
         # Place to NET
         output_image, marker = net.detect()
         print(f"People on image: {marker}")
+        if marker:
+            client.make_req("PTrue")
+        else:
+            client.make_req("PFals")
 
         # # visualize the image
         cv2.imshow('Keypoint image', output_image)
