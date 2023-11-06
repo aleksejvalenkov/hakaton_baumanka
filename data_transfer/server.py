@@ -15,6 +15,11 @@ People = False
 
 
 def SERVER():
+    global Magnet
+    global Led
+    global Voice
+    global People
+
     s = socket.socket()
     # host = "172.16.98.38"
     host = "192.168.1.84"
@@ -32,7 +37,7 @@ def SERVER():
             break
         print("__________________________________________________")
         print(data)
-        print(type(data))
+
         if data == 'getim':
             file = open(filename, "rb")
             # while for sending
@@ -48,9 +53,11 @@ def SERVER():
             People = True
             print(f'People on image: {People}')
 
-        elif data == 'RFals':
+        elif data == 'PFals':
+            print("Hia")
             People = False
             print(f'People on image: {People}')
+            
 
         elif data == 'close':
             conn.close()
