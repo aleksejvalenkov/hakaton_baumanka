@@ -46,3 +46,4 @@ cv2.waitKey(0)
 # set the save path
 save_path = f"../outputs/{args['input'].split('/')[-1].split('.')[0]}.jpg"
 cv2.imwrite(save_path, output_image*255.)
+
