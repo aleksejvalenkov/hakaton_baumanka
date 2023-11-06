@@ -1,11 +1,11 @@
 import time
 
 from pymavlink import mavutil
-from iq_pymavlink.arm import arm
-from iq_pymavlink.takeoff import takeoff
-from iq_pymavlink.land import land
-from iq_pymavlink.speed_yaw import set_speed
-from iq_pymavlink.get_autopilot_info import get_autopilot_info
+from iq_pymavlink_.arm import arm
+from iq_pymavlink_.takeoff import takeoff
+from iq_pymavlink_.land import land
+from iq_pymavlink_.speed_yaw import set_speed
+from iq_pymavlink_.get_autopilot_info import get_autopilot_info
 
 
 # from iq_pymavlink.unittests import test_all
