@@ -11,7 +11,7 @@ def main():
     net = Net()
     while True:
         client.read_sock("image.jpeg")
-        if counter == 10:
+        if counter == 100:
             break
         counter += 1
         # Place to NET
@@ -31,13 +31,19 @@ def main():
 
         elif k == 13: # Enter
             print('Enter pressed')
-            
+            client.make_req("StrtM")
             print('Started mission')
             break
 
         elif k == 32: # Space
             print('Space pressed')
+            client.make_req("Magnt")
+            print('Dropped')
+            pass
 
+        elif k == 113: # q
+            print('q pressed')
+            client.make_req("LedOn")
             print('Dropped')
             pass
 

@@ -7,7 +7,7 @@ import cv2
 from picamera2 import Picamera2
 
 # global variables
-Magnet = False
+Magnet = True
 Led = False
 Voice = 0
 People = False
@@ -58,6 +58,21 @@ def SERVER():
             print("")
             People = False
             print(f'People on image: {People}')
+
+        elif data == 'StrtM':
+            print("")
+            # TO_DO
+            # print(f'People on image: {People}')
+
+        elif data == 'Magnt':
+            print("")
+            Magnet = False
+            print(f'Droping rescue kit')
+
+        elif data == 'LedOn':
+            print("")
+            Led = not Led
+            print(f'Led  : {Led}')
             
 
         elif data == 'close':
