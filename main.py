@@ -10,8 +10,8 @@ def main():
         client.read_sock("image.jpeg")
         if counter == 10:
             break
-    counter += 1
-    time.sleep(0.2)
+        counter += 1
+        time.sleep(0.1)
     client.make_req("close")
 
 
