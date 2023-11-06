@@ -23,8 +23,8 @@ class Net:
         # load the modle on to the computation device and set to eval mode
         self.model.to(self.device).eval()
 
-        # self.image_path = "/home/alex/Documents/hackaton_baumanka/image.jpeg"
-        self.image_path = "hakaton_baumanka/neural_net/input/image4.jpg"
+        self.image_path = "/home/alex/Documents/hackaton_baumanka/image.jpeg"
+        # self.image_path = "hakaton_baumanka/neural_net/input/image4.jpg"
 
     def detect(self):
         image = Image.open(self.image_path).convert('RGB')
