@@ -70,11 +70,15 @@ def SERVER():
         elif data == 'PTrue':
             print("")
             People = True
+            Led = '1'
+            Voice = '3'
             print(f'People on image: {People}')
 
         elif data == 'PFals':
             print("")
             People = False
+            Led = '0'
+            Voice = '0'
             print(f'People on image: {People}')
 
         elif data == 'StrtM':
@@ -141,17 +145,18 @@ def serial_prot():
         time.sleep(sleep)
 
 def logic():
-    global Magnet 
-    global Led
-    global Voice
-    global People
+    # global Magnet 
+    # global Led
+    # global Voice
+    # global People
 
-    if People:
-        Led = '1'
-        Voice = '3'
-    else:
-        Led = '0'
-        Voice = '0'
+    # if People:
+    #     Led = '1'
+    #     Voice = '3'
+    # else:
+    #     Led = '0'
+    #     Voice = '0'
+    pass
 
 
 # init events
