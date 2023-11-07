@@ -37,19 +37,19 @@ def main():
             print('Enter pressed')
             client.make_req("StrtM")
             print('Started mission')
-            break
+            # break
 
         elif k == 32: # Space
             print('Space pressed')
             client.make_req("Magnt")
             print('Dropped')
-            pass
+            # pass
 
         elif k == 113: # q
             print('q pressed')
             client.make_req("LedOn")
             print('Dropped')
-            pass
+            # pass
 
         time.sleep(0.1)
     client.make_req("close")
