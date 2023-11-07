@@ -11,9 +11,9 @@ def main():
     net = Net()
     while True:
         client.read_sock("image.jpeg")
-        if counter == 1000:
-            break
-        counter += 1
+        # if counter == 1000:
+        #     break
+        # counter += 1
         # Place to NET
         try:
             output_image, marker = net.detect()
