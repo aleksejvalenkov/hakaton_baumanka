@@ -3,7 +3,7 @@ import serial
 
 class serial_reader:
     def __init__(self) -> None:
-        com_port = '/dev/tty' # TO_DO
+        com_port = '/dev/ttyUSB0' # TO_DO
         baud_rate = 115200
         self.ser = serial.Serial(com_port, baud_rate)
         

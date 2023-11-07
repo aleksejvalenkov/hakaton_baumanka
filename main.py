@@ -11,7 +11,7 @@ def main():
     net = Net()
     while True:
         client.read_sock("image.jpeg")
-        if counter == 100:
+        if counter == 1000:
             break
         counter += 1
         # Place to NET
@@ -30,6 +30,7 @@ def main():
         k = cv2.waitKey(1)
         if k == 27: # Esc
             print('Esc pressed')
+            client.make_req("close")
             break
 
         elif k == 13: # Enter
@@ -50,7 +51,7 @@ def main():
             print('Dropped')
             pass
 
-        time.sleep(0.2)
+        time.sleep(0.1)
     client.make_req("close")
 
 
