@@ -3,7 +3,7 @@ import socket
 # host = "172.16.98.38"
 
 class Client:
-    def __init__(self, host = "192.168.14.104", port = 8080) -> None:
+    def __init__(self, host = "192.168.14.103", port = 8080) -> None:
         self.s = socket.socket()
 
         self.s.connect((host, port))

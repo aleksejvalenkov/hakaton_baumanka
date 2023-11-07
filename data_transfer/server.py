@@ -29,7 +29,7 @@ def SERVER():
     s = socket.socket()
     # host = "172.16.98.38"
     # host = "192.168.1.84"
-    host = "192.168.14.104"
+    host = "192.168.14.103"
     port = 8080
     s.bind((host, port))
     s.listen(1)
