@@ -112,18 +112,19 @@ def image_reader():
         time.sleep(sleep)
 
 def serial_prot():
-    global Magnet
-    global Led
-    global Voice
-    global flame
-    global sonic_dist
+    pass
+    # global Magnet
+    # global Led
+    # global Voice
+    # global flame
+    # global sonic_dist
 
-    sleep = 0.1
-    esp = serial_reader()
+    # sleep = 0.1
+    # esp = serial_reader()
 
-    while True:
-        flame, Magnet, sonic_dist = esp.esp_reader(Voice, int(Magnet), int(Led))
-        time.sleep(sleep)
+    # while True:
+    #     flame, Magnet, sonic_dist = esp.esp_reader(Voice, int(Magnet), int(Led))
+    #     time.sleep(sleep)
 
 
 # init events
