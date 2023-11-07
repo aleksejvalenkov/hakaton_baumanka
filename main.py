@@ -50,7 +50,7 @@ def main():
             print('Dropped')
             pass
 
-        time.sleep(1)
+        time.sleep(0.2)
     client.make_req("close")
 
 
