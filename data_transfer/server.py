@@ -84,7 +84,7 @@ def SERVER():
 
         elif data == 'Magnt':
             print("")
-            Magnet = False
+            Magnet = '0'
             print(f'Droping rescue kit')
 
         elif data == 'LedOn':
