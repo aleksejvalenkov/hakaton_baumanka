@@ -152,7 +152,7 @@ def logic():
         Voice = '3'
     else:
         Led = '0'
-        Voice = '3'
+        Voice = '0'
 
 
 # init events
