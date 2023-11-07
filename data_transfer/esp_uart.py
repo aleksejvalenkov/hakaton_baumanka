@@ -7,7 +7,7 @@ class serial_reader:
         baud_rate = 115200
         self.ser = serial.Serial(com_port, baud_rate)
         
-    def esp_reader(self, audio_code = '0', magnet_mode = '0', led_mode = '0'):
+    def esp_reader(self, audio_code, magnet_mode, led_mode):
 
         '''
         получаем актуальные управляюще команды!! (audio_code magnet_mode led_mode )
