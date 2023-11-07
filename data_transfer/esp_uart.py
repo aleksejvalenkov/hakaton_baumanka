@@ -14,7 +14,7 @@ class serial_reader:
         '''
         flame, magnet_status, sonic_dist= -1, -1, -1
 
-        data_to_send = '#' + audio_code + ',' + magnet_mode + ',' + led_mode + ';'
+        data_to_send = '#' + str(audio_code) + ',' + str(magnet_mode) + ',' + str(led_mode) + ';'
         self.ser.write(data_to_send.encode())
         received_data = self.ser.readline().decode()
         
