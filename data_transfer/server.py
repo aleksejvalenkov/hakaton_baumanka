@@ -53,7 +53,7 @@ def SERVER():
 
             print("cast")
             im = picam2.capture_array()
-            im = cv2.rotate(im, cv2.rotate_180)
+            im = cv2.rotate(im, cv2.ROTATE_180)
             cv2.imwrite(filename, im)
 
 
