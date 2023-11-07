@@ -137,7 +137,8 @@ def serial_prot():
     esp = serial_reader()
 
     while True:
-        flame, Magnet_status, sonic_dist = esp.esp_reader(Voice, Magnet, Led)
+        # flame, Magnet_status, sonic_dist = esp.esp_reader(Voice, Magnet, Led)
+        esp.esp_reader(Voice, Magnet, Led)
         time.sleep(sleep)
 
 
