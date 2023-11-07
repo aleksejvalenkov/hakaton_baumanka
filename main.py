@@ -47,7 +47,7 @@ def main():
             print('Dropped')
             pass
 
-        time.sleep(0.1)
+        time.sleep(1)
     client.make_req("close")
 
 
