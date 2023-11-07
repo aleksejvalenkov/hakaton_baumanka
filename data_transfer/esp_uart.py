@@ -12,7 +12,7 @@ class serial_reader:
         '''
         получаем актуальные управляюще команды!! (audio_code magnet_mode led_mode )
         '''
-        flame, magnet_status, sonic_dist= -1, -1, -1
+        # flame, magnet_status, sonic_dist= -1, -1, -1
 
         data_to_send = '#' + audio_code + ',' + magnet_mode + ',' + led_mode + ';'
         # data_to_send = '#' + '0' + ',' + '1' + ',' + '1' + ';'
