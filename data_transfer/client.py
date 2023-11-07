@@ -20,7 +20,7 @@ class Client:
 
         file = open(filename, "wb")
         while True:
-            file_data = self.s.recv(1024)
+            file_data = self.s.recv(4096)
             file.write(file_data)
             if file_data[-1] == 64:
                 break

@@ -59,7 +59,7 @@ def SERVER():
             file = open(filename, "rb")
             # while for sending
             while True:
-                file_data = file.read(1024)
+                file_data = file.read(4096)
                 conn.send(file_data)
                 if not file_data:
                     break

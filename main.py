@@ -15,7 +15,10 @@ def main():
             break
         counter += 1
         # Place to NET
-        output_image, marker = net.detect()
+        try:
+            output_image, marker = net.detect()
+        except:
+            print('image BED')
         print(f"People on image: {marker}")
         if marker:
             client.make_req("PTrue")
