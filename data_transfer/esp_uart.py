@@ -20,8 +20,9 @@ class serial_reader:
         self.ser.write(data_to_send.encode())
         received_data = self.ser.readline().decode()
         
-
+        print(received_data)
         if received_data[0] == "%" and received_data[-1] == ";":
+            
             try:
                 flame, magnet_status, sonic_dist = \
                     map(int, received_data[1:-1].split(','))
