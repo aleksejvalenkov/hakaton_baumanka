@@ -9,9 +9,9 @@ from picamera2 import Picamera2
 from esp_uart import serial_reader
 
 # global variables
-Magnet = True
-Led = False
-Voice = 0
+Magnet = '0'
+Led = '0'
+Voice = '0'
 People = False
 
 sonic_dist = 1000000
@@ -89,7 +89,10 @@ def SERVER():
 
         elif data == 'LedOn':
             print("")
-            Led = not Led
+            if Led == '0':
+                Led == '1'
+            else:
+                Led == '0'
             print(f'Led  : {Led}')
             
 
@@ -134,7 +137,7 @@ def serial_prot():
     esp = serial_reader()
 
     while True:
-        flame, Magnet, sonic_dist = esp.esp_reader(Voice, int(Magnet), int(Led))
+        flame, Magnet, sonic_dist = esp.esp_reader(Voice, Magnet, Led)
         time.sleep(sleep)
 
 
