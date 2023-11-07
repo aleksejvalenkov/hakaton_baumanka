@@ -141,6 +141,19 @@ def serial_prot():
         esp.esp_reader(Voice, Magnet, Led)
         time.sleep(sleep)
 
+def logic():
+    global Magnet 
+    global Led
+    global Voice
+    global People
+
+    if People:
+        Led = '1'
+        Voice = '3'
+    else:
+        Led = '0'
+        Voice = '3'
+
 
 # init events
 e1 = threading.Event()
@@ -149,7 +162,7 @@ e3 = threading.Event()
 
 # init threads
 t1 = threading.Thread(target=SERVER, args=())
-t2 = threading.Thread(target=image_reader, args=())
+t2 = threading.Thread(target=logic, args=())
 t3 = threading.Thread(target=serial_prot, args=())
 
 # start threads
