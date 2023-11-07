@@ -46,8 +46,8 @@ def SERVER():
         data = conn.recv(40).decode("utf8")
         if not data:
             break
-        # print("__________________________________________________")
-        # print(f"Reseivde : \t {data}")
+        print("__________________________________________________")
+        print(f"Reseivde : \t {data}")
 
         if data == 'getim':
 
@@ -89,10 +89,8 @@ def SERVER():
 
         elif data == 'LedOn':
             print("")
-            if Led == '0':
-                Led == '1'
-            else:
-                Led == '0'
+            Led == '1'
+            
             print(f'Led  : {Led}')
             
 
