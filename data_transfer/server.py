@@ -6,11 +6,17 @@ import time
 import cv2
 from picamera2 import Picamera2
 
+from esp_uart import serial_reader
+
 # global variables
 Magnet = True
 Led = False
 Voice = 0
 People = False
+
+sonic_dist = 1000000
+flame = False
+
 
 
 
@@ -22,7 +28,8 @@ def SERVER():
 
     s = socket.socket()
     # host = "172.16.98.38"
-    host = "192.168.1.84"
+    # host = "192.168.1.84"
+    host = "192.168.14.103"
     port = 8080
     s.bind((host, port))
     s.listen(1)
@@ -85,27 +92,39 @@ def SERVER():
 
 def image_reader():
     # Grab images as numpy arrays and leave everything else to OpenCV.
-    pass
-    # picam2 = Picamera2()
-    # picam2.configure(picam2.create_preview_configuration(main={"format": 'XRGB8888', "size": (640, 480)}))
-    # picam2.start()
+    # pass
+    picam2 = Picamera2()
+    picam2.configure(picam2.create_preview_configuration(main={"format": 'XRGB8888', "size": (640, 480)}))
+    picam2.start()
 
-    # sleep = 0.1
+    sleep = 0.1
 
-    # while True:
-    #     print("cast")
-    #     im = picam2.capture_array()
+    while True:
+        print("cast")
+        im = picam2.capture_array()
 
-    #     grey = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+        grey = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
 
-    #     # cv2.imshow("Camera", im)
-    #     # cv2.waitKey(1)
-    #     time_now = time.time()
-    #     cv2.imwrite("image.jpeg", im)
-    #     time.sleep(sleep)
+        # cv2.imshow("Camera", im)
+        # cv2.waitKey(1)
+        time_now = time.time()
+        cv2.imwrite("image.jpeg", im)
+        time.sleep(sleep)
 
 def serial_prot():
-    pass
+    global Magnet
+    global Led
+    global Voice
+    global flame
+    global sonic_dist
+
+    sleep = 0.1
+    esp = serial_reader()
+
+    while True:
+        flame, Magnet, sonic_dist = esp.esp_reader(Voice, int(Magnet), int(Led))
+        time.sleep(sleep)
+
 
 # init events
 e1 = threading.Event()
