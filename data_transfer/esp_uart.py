@@ -18,7 +18,8 @@ class serial_reader:
         data_to_send = '#' + '0' + ',' + '1' + ',' + '1' + ';'
         print('Sent to ESP', data_to_send)
         self.ser.write(data_to_send.encode())
-        received_data = self.ser.readline().decode()
+        
+        received_data = self.ser.readline(self.ser.inWaiting()).decode()
         
         print(received_data)
         if received_data[0] == "%" and received_data[-1] == ";":
