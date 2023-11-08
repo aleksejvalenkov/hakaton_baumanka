@@ -7,7 +7,7 @@ from pymavlink import mavutil
 # from iq_pymavlink_.land import land
 # from iq_pymavlink_.speed_yaw import set_speed
 from iq_pymavlink_.get_autopilot_info import get_autopilot_info
-
+from iq_pymavlink_.wait_for_position_aiding import ekf_pos_aiding, wait_until_position_aiding
 
 # from iq_pymavlink.unittests import test_all
 
@@ -51,7 +51,7 @@ def arm(statys_arm):
 
 def takeoff(speed, h):
     the_connection.mav.command_long_send(the_connection.target_system, the_connection.target_component,
-                                         mavutil.mavlink.MAV_CMD_NAV_TAKEOFF, 0, 0, speed, 0, 0, 0, 0, h)
+                                         mavutil.mavlink.MAV_CMD_NAV_TAKEOFF_LOCAL, 0, 0, speed, 0, 0, 0, 0, h)
 
     msg = the_connection.recv_match(type="COMMAND_ACK", blocking=True)
     return print(msg)
@@ -72,7 +72,8 @@ def land():
 
 
 arm(1)
-print(get_autopilot_info(connection=the_connection))
+# print(get_autopilot_info(connection=the_connection))
+print(wait_until_position_aiding(the_connection))
 time.sleep(3)
 takeoff(1, 1)
 time.sleep(5)
