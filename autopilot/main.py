@@ -49,9 +49,9 @@ def arm(statys_arm):
     return print(msg)
 
 
-def takeoff(speed, h):
+def takeoff():
     the_connection.mav.command_long_send(the_connection.target_system, the_connection.target_component,
-                                         mavutil.mavlink.MAV_CMD_NAV_TAKEOFF_LOCAL, 0, 0, speed, 0, 0, 0, 0, h)
+                                         mavutil.mavlink.SET_POSITION_TARGET_LOCAL_NED, 0, 0, 0, 9, 3576, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
     msg = the_connection.recv_match(type="COMMAND_ACK", blocking=True)
     return print(msg)
@@ -71,11 +71,13 @@ def land():
 
 
 
+
+
 arm(1)
 # print(get_autopilot_info(connection=the_connection))
 print(wait_until_position_aiding(the_connection))
 time.sleep(3)
-takeoff(1, 1)
+takeoff()
 time.sleep(5)
 # land()
 # time.sleep(5)
