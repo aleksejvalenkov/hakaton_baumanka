@@ -43,7 +43,7 @@ print("Heartbeat from system (system %u component %u)" % (the_connection.target_
 
 def arm(statys_arm):
     the_connection.mav.command_long_send(the_connection.target_system, the_connection.target_component,
-                                         mavutil.mavlink.MAV_CMD_COMPONENT_ARM_DISARM, 0, statys_arm, 0, 0, 0, 0, 0, 0)
+                                         mavutil.mavlink.MAV_CMD_COMPONENT_ARM_DISARM, 15, statys_arm, 0, 0, 0, 0, 0, 0)
 
     msg = the_connection.recv_match(type="COMMAND_ACK", blocking=True)
     return print(msg)
