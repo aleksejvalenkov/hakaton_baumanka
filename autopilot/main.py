@@ -51,7 +51,7 @@ def arm(statys_arm):
 
 def takeoff(speed, h):
     the_connection.mav.command_long_send(the_connection.target_system, the_connection.target_component,
-                                         mavutil.mavlink.MAV_CMD_NAV_TAKEOFF, 0, 0, speed, 0, 0, 0, 0, h)
+                                         mavutil.mavlink.MAV_CMD_NAV_TAKEOFF_LOCAL, 0, 0, speed, 0, 0, 0, 0, h)
 
     msg = the_connection.recv_match(type="COMMAND_ACK", blocking=True)
     return print(msg)
