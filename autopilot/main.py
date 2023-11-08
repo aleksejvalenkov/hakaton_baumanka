@@ -72,7 +72,7 @@ def land():
 
 
 arm(1)
-get_autopilot_info(connection=the_connection)
+print(get_autopilot_info(connection=the_connection))
 time.sleep(3)
 takeoff(1, 1)
 time.sleep(5)
