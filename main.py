@@ -13,13 +13,13 @@ def main():
         client.read_sock("image.jpeg")
         # if counter == 1000:
         #     break
-        # counter += 1
+        # counter += 1  
         # Place to NET
         try:
             output_image, marker = net.detect()
         except:
             print('image BED')
-        print(f"People on image: {marker}")
+        # print(f"People on image: {marker}")
         if marker:
             client.make_req("PTrue")
         else:
