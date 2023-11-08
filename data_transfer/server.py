@@ -31,10 +31,10 @@ def SERVER():
     picam2.start()
 
     s = socket.socket()
-    # host = "172.16.98.38"
+    host = "172.16.98.38"
     # host = "192.168.1.84"
     # host = "192.168.14.103"
-    host = "10.42.0.34"
+    # host = "10.42.0.34"
 
     port = 8080
     s.bind((host, port))
@@ -73,7 +73,7 @@ def SERVER():
             print("")
             People = True
             Led = '1'
-            Voice = '3'
+            Voice = '7'
             print(f'People on image: {People}')
 
         elif data == 'PFals':
